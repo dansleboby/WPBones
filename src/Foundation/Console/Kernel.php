@@ -64,8 +64,7 @@ class Kernel
       }
 
       foreach ($commands as $key => $command) {
-        $name = $command->command;
-        $name .= str_repeat(' ', 23 - strlen($name));
+        $name = str_pad($command->command, 23);
         $description = $command->description;
         $this->line(" {$name} {$description}");
       }
